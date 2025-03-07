@@ -219,4 +219,4 @@ LIMIT number_of_rows OFFSET number_of_rows_to_skip;
 
 ---
 
-!!! Note Let's Start with Intermediate topics in SQL.
+!!! Note Let's Start with Advanced topics in SQL.

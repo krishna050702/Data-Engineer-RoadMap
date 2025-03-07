@@ -141,3 +141,157 @@ from trades;
 ```
 
 ---
+
+### SQL Arithmetic Operators
+
+##### Addition +
+```
+SELECT salary + bonus as total_compensation
+FROM employees;
+```
+
+##### Subtraction -
+```
+SELECT revenue - expenses AS profit
+FROM product_sales;
+```
+
+##### Multiplication *
+```
+SELECT units_sold * price AS revenue FROM ecomm_orders;
+```
+
+##### Division /
+```
+SELECT country_gdp / population AS gdp_per_capita FROM econ_stats;
+```
+
+##### Modulus %
+```
+SELECT 23 % 6;
+```
+
+##### Exponentiation (^)
+```
+SELECT 10 ^ 2;
+```
+
+##### ABS():- Calculating Absolute Differences
+- will get the difference in positive value.
+
+##### ROUND():- 
+- By using ROUND(AVG(close),2) you specify the number of decimals.
+```
+SELECT
+    stock,
+    AVG(close) AS avg_close,
+    ROUND(AVG(close), 2) AS rounded_avg_close
+FROM stock_prices
+WHERE EXTRACT(YEAR FROM date) = 2025
+GROUP BY stock;
+```
+
+---
+
+##### CEIL() and FLOOR():- Rounding Up and Down
+- We can utilize the ```CEIL()``` function to round up and the ```FLOOR()``` function to round down to the lowest and highest prices.
+
+| high | CEIL() - Round up | | low | FLOOR() - Round down |
+|------|--------------|-----------|--------|---------|
+|224.20|225| | 201.06|206|
+|218.76|219| | 181.82| 181|
+
+---
+
+##### POWER():- Calculatng Squared Values
+- The ```POWER()``` function raises a number to a specified power, allowing us to perform exponential calculations.
+- ```POWER(close, 2)```
+
+---
+
+##### MOD() or %
+- The ```MOD()``` function or ```%``` modulo operator calculates the remainder of division between two numbers.
+
+!!! Note:- ```CAST()``` or we can use ```::``` notation to cast data types.
+
+---
+
+#### SQL NULL
+- ```IS NULL``` and ```IS NOT NULL``` :- Used to identify null and non-null values.
+- ```COALESCE()``` :- Returns the first non-null value from a list of arguments.
+- ```IFNULL()``` :- Substitutes null value with a specified value specified.
+
+##### IS NULL
+```
+SELECT *
+FROM table_name
+WHERE col1 IS NULL;
+```
+
+##### IS NOT NULL
+```
+SELECT *
+FROM table_name
+WHERE col1 IS NOT NULL;
+```
+
+---
+
+#### COALESCE()
+- The ```COALESCE()``` function takes multiple inputs and returns the first non-null value.
+```
+COALESCE(column_name, 'expression')
+```
+- If ```column_name``` is NULL, it returns the specified 'expression'. Otherwise, it returns the value of ```column_name```.
+
+---
+
+#### Handling Gaps with SQL IFNULL()
+``` IFNULL(column_name, value_if_null) ```
+
+---
+
+- ```COALESCE()``` is versatile for multiple arguments, it returns the first non-null value among them.
+``` COALESCE(arg1, arg2, arg3, ....)```
+- ```IFNULL()``` handles two arguments, returning the second if the first is null, else it returns the first.
+```IFNULL(expression, value_if_null)```
+
+---
+
+### SQL CASE
+- The ```CASE()``` statement in SQL allows you to shape, transform, manipulate, and filter data bassed on specified conditions.
+```
+SELECT
+    column1,
+    column2,
+    CASE
+        WHEN condition_1 THEN result_1
+        WHEN condition_2 THEN result_2
+        WHEN ..... THEN .....
+        ELSE result_3
+    END AS column_3_name -- (Give your new column an alias)
+FROM table_1;
+```
+
+!!! We can use Case in where condition also.
+
+```
+SELECT
+  platform,
+  COUNT(CASE 
+    WHEN followers >= 500000 THEN 1
+    ELSE NULL
+  END) AS popular_actor_count,
+  COUNT(CASE 
+    WHEN followers < 500000 THEN 1
+    ELSE NULL
+  END) AS less_popular_actor_count
+FROM marvel_avengers
+GROUP BY platform;
+```
+
+!!! Similarly we can use SUM(), AVG().
+
+---
+
+### SQL JOINS

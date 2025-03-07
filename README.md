@@ -25,9 +25,10 @@ This roadmap is divided into several key sections, each focusing on a critical a
 
 ----
 
-- <a href=""> SQL Topics </a>
-	- <a href="https://github.com/krishna050702/Data-Engineer-RoadMap/blob/main/SQL_Basics/sql_basics.md"> Basics </a>
-	- Advanced SQL
+- <a href="https://github.com/krishna050702/Data-Engineer-RoadMap/blob/main/SQL"> SQL Topics </a>
+	- <a href="https://github.com/krishna050702/Data-Engineer-RoadMap/blob/main/SQL/SQL_Basics/sql_basics.md"> Basics </a>
+	- <a href="https://github.com/krishna050702/Data-Engineer-RoadMap/blob/main/SQL/SQL_Intermediate/sql_intermediate.md">Intermediate SQL </a>
+	- <a href="https://github.com/krishna050702/Data-Engineer-RoadMap/blob/main/SQL/SQL_Advanced/sql_advanced.md">Advanced SQL </a>
 
 - Python Topics
 	- Basics

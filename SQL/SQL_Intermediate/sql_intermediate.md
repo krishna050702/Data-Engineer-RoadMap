@@ -1,4 +1,4 @@
-### Advanced SQL
+### Intermediate SQL
 ---
 #### Aggregate Functions
 - <b>SUM</b> adds together all the values in a particular column.
